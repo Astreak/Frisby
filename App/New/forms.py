@@ -19,4 +19,8 @@ class MusicForm(ModelForm):
     class Meta:
         model=Music
         fields=["genre","subscriber","song","urls"]
-        
+
+class MedicalForm(ModelForm):
+    class Meta:
+        model=Medical
+        fields=["name","age","img","diagnosis"]

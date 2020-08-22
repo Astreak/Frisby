@@ -44,6 +44,17 @@ class Msg(models.Model):
     def __str__(self):
         return f"{self.sen} to {self.rec}";
     
+class Medical(models.Model):
+    name=models.OneToOneField(User,on_delete=models.CASCADE,default=1);
+    age=models.IntegerField()
+    img=models.ImageField(upload_to="img/",default="default.jpg")
+    diagnosis=models.BooleanField(default=False)
+    report=models.TextField(default="Nothing..to show no diagnosis please wait")
+    date=models.DateTimeField("Date",default=datetime.datetime.now())
+    
+    def __str__(self):
+        return f"Medical of {self.name}"
+    
 
 
     

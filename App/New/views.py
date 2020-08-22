@@ -76,3 +76,13 @@ def current(req):
         return HttpResponse(f"<h1><center>{req.user}</center></h1>")
     else:
         return HttpResponse("You havent logged in yet");
+    
+def medical(req):
+    if req.method=="POST":
+        form=MedicalForm(req.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("main-home2")
+    else:
+        form=MedicalForm()
+    return render(req,"New/medical_form.html",{"form":form})

@@ -14,7 +14,8 @@ urlpatterns = [
     path("msg/",views.forms2,name="main-msg"),
     path("create/",views.usercreate,name="main-create"),
     path("profile/",views.profile,name="main-profile"),
-    path("music/",views.MusicForm,name="main-music"),
+    path("music/",views.musicform,name="main-music"),
+    path("medical/",views.medical,name="main-medical"),
     path("kol/",views.current,name="main-current")
     
     
